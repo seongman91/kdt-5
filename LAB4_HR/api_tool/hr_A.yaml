@@ -4,7 +4,7 @@ info:
   description: API for retrieving employee details and updating profile information
   version: 1.0.0
 servers:
-- url: http://aichatbot.datasolution.kr/
+- url: https://law-commercial-transactions-province.trycloudflare.com/
   description: Production server
 tags: []
 paths:
