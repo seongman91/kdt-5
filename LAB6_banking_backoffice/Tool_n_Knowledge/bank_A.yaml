@@ -13,7 +13,7 @@ info:
 
     IBM, the IBM logo, and ibm.com are trademarks or registered trademarks of International Business Machines Corporation. Other product and service names might be trademarks of IBM or other companies.
 servers:
-  - url: http://aichatbot.datasolution.kr/
+  - url: https://law-commercial-transactions-province.trycloudflare.com/
     description: Production Endpoint
 paths:
   /iban-transfer:
