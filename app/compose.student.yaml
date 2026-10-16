@@ -1,0 +1,30 @@
+name: ${COMPOSE_PROJECT_NAME:-wxo-student-lab}
+services:
+  api:
+    image: wxo-student-api:local
+    build: .
+    restart: unless-stopped
+    environment:
+      APP_DATA_DIR: /app/data
+      TRAINING_STUDENTS: "20"
+      # Empty is intentional only when prepare_training.py selected no-auth mode.
+      TRAINING_API_KEY: ${TRAINING_API_KEY?Run 01_Start.cmd first}
+    ports:
+      - "127.0.0.1:${API_PORT:-8000}:8000"
+    volumes:
+      - training_data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 6
+      start_period: 10s
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    restart: "no"
+    command: ["tunnel", "--no-autoupdate", "--url", "http://api:8000"]
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  training_data:

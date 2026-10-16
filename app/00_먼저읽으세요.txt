@@ -1,0 +1,29 @@
+﻿Windows 개인 PC API 실습 키트 - 인증 없이 사용
+
+1. ZIP을 우클릭해 [모두 압축 풀기]를 선택합니다.
+2. guide.html 또는 PDF를 처음부터 읽고 WSL 2와 Docker Desktop을 준비합니다.
+3. 01_Start.cmd를 실행하고 본인 학생 번호(S01~S20)를 입력합니다.
+4. 02_Check.cmd로 로컬·공개 주소가 모두 정상인지 확인합니다.
+5. generated/my_lab.txt에서 공개 주소와 본인 직원·계좌 정보를 확인합니다.
+6. generated/hr_training.yaml과 bank_training.yaml을 Orchestrate에 가져옵니다.
+   인증 선택 화면이 나오면 No authentication을 선택합니다.
+7. 본인 Agent에 도구를 연결하고 조회·변경 결과를 확인합니다.
+8. 수업이 끝나면 03_Stop.cmd를 실행합니다.
+
+실행 파일은 세 개만 사용합니다.
+- 01_Start.cmd : API·터널 시작, 공개 주소와 가져오기 파일 생성
+- 02_Check.cmd : 직원·계좌 조회 검사 (데이터는 변경하지 않음)
+- 03_Stop.cmd : API·터널 중지 (실습 데이터 유지)
+
+API 키는 필요하지 않습니다. Python·Git·IBM Cloud CLI도 Windows에 따로 설치하지 않습니다.
+Cloudflare 계정이나 개인 도메인 없이 임시 공개 주소를 발급받습니다.
+Orchestrate는 기존 교육용 SaaS 계정을 사용합니다.
+
+01_Start.cmd를 다시 실행하면 공개 주소가 달라집니다.
+안내서 12쪽에 따라 본인 도구의 주소를 갱신하세요.
+실습 중에는 PC·Docker·인터넷 연결을 유지합니다.
+공개 주소를 아는 사람이 가상 데이터를 조회·변경할 수 있으므로 실습 후 중지합니다.
+
+이전 키트 업데이트: 컨테이너를 중지하고 새 파일을 기존 실습 폴더에 덮어씁니다.
+.env.training과 Docker 데이터 볼륨은 삭제하지 않습니다.
+이후에는 위 세 실행 파일만 사용하고 새 YAML로 본인 도구를 갱신합니다.

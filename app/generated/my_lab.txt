@@ -1,0 +1,16 @@
+﻿Student: S01
+Local URL: http://localhost:8000
+Public URL: https://prices-furniture-radios-admitted.trycloudflare.com
+Authentication: NONE. Import the generated YAML with No authentication.
+
+HR name: 교육생01
+Source IBAN: DE66999999990000000002
+Destination IBAN: DE39999999990000000003
+Initial time off: 15 days
+Initial balances: source 5000 EUR / destination 1000 EUR
+Initial overdraft: 0 EUR
+
+Import files: hr_training.yaml and bank_training.yaml
+Tool names contain: _s01_
+Restart 01_Start.cmd to refresh a changed public URL.
+Then update YOUR imported tools in Orchestrate.
